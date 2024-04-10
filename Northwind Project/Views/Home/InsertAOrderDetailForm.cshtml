@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2> Insert a New Order Detail </h2>
+
+<form action="InsertAOrderDetail" method="Post">
+
+    Order ID <br />
+    
+    <select name="orderId">
+        @foreach (var o in ViewBag.listOfOrders)
+        {
+            <option value="@o.OrderId"> @o.OrderId </option>
+        }
+
+    </select>
+
+    Product ID  <br />
+
+    <select name="productID">
+        @foreach (var p in ViewBag.listOfProducts)
+        {
+            <option value="@p.ProductID"> @p.ProductID </option>
+        }
+
+    </select>
+
+    Unit Price <br />
+    <input type="text" id="this is for js1" class="this is for your css1" name="unitPrice" /> <br />
+
+    Quantity <br />
+    <input type="text" id="this is for js1" class="this is for your css1" name="quantity" /> <br />
+
+    Discount <br />
+    <input type="text" id="this is for js1" class="this is for your css1" name="discount" /> <br />
+
+
+    <input type="submit" /> <input type="reset" />
+
+</form>

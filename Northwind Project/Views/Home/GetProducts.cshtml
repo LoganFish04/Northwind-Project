@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th> Product Id </th>
+        <th> Product Name </th>
+        <th>Supplier Id </th>
+        <th> Category Id </th>
+        <th> Quantity Per Unit </th>
+        <th> Unit Price </th>
+        <th> Units in Stock </th>
+        <th> Units on Order </th>
+        <th> Reorder Level </th>
+        <th> Discontinued </th>
+    </tr>
+
+
+    @foreach(var p in ViewBag.ListOfProducts)
+    {
+        <tr>
+            <td> <a href="UpdateAProductForm?aProductId = @p.ProductID"> @p.ProductID </a> </td>
+            <td> <a href="UpdateAProductForm?aProductId = @p.ProductID"> @p.ProductName </a> </td>
+            <td>@p.SupplierID</td>
+            <td>@p.CategoryID</td>
+            <td>@p.QuantityPerUnit</td>
+            <td>@p.UnitPrice</td>
+            <td>@p.UnitsInStock</td>
+            <td>@p.UnitsOnOrder</td>
+            <td>@p.ReorderLevel</td>
+            <td>@p.Discontinued</td>
+            <td> <a href="UpdateAProductForm?aProductId = @p.ProductID"> Update </a> </td>
+    </tr>
+    }
+
+</table>
+

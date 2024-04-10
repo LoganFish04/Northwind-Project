@@ -1,0 +1,59 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2>Update A Product</h2>
+@* <h5> Product Id: @ViewBag.ListOfProducts[0].ProductId </h5> *@
+
+<form action="UpdateAProduct" method="Post">
+
+    <input type="hidden" name="productID" value="@ViewBag.ListOfProducts[0].ProductId" />
+
+    Product Name <br />
+    <input type="text" id="this is for js1" class="this is for your css1" name="productName" value="@ViewBag.ListOfProducts[0].ProductName" /> <br />
+
+    Supplier Id  <br />
+
+    <select name="supplierId">
+        @foreach (var s in ViewBag.ListOfSuppliers)
+        {
+            @if(s.SupplierID == ViewBag.ListOfProducts[0].SupplierID)
+            {
+                // SELECTED means the item in the drop box that is currently showing
+                <option value="@s.SupplierId" SELECTED> @s.SupplierId @s.CompanyName </option>
+            }
+            else
+            {
+                <option value="@s.SupplierId"> @s.SupplierId @s.CompanyName </option>
+            }
+            
+        }
+
+    </select>
+
+    Category Id <br />
+
+    <select name="categoryId">
+        @foreach (var c in ViewBag.ListOfCategories)
+        {
+            @if (c.CategoryID == ViewBag.ListOfProducts[0].CategoryID)
+            {
+                <option value="@c.CategoryID" SELECTED> @c.CategoryID @c.CategoryName </option>
+            }
+            else
+            {
+                <option value="@c.CategoryID"> @c.CategoryID @c.CategoryName </option>
+            }
+            
+        }
+    </select>
+
+    Unit Price <br />
+    <input type="text" id="this is for js4" class="this is for your css4" name="unitPrice" value="@ViewBag.ListOfProducts[0].UnitPrice" /> <br /><br />
+
+    <input type="submit" /> <input type="reset" />
+
+
+</form> 

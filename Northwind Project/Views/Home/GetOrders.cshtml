@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<table border="1">
+    <tr>
+        <th>  Order Id          </th>
+        <th>  Customer Id       </th>
+        <th>  Employee Id       </th>
+        <th>  Order Date        </th>
+        <th>  Required Date     </th>
+        <th>  Shipped Date      </th>
+        <th>  Shipped Via       </th>
+        <th>  Freight           </th>
+        <th>  Ship Name         </th>
+        <th>  Ship Address      </th>
+        <th>  Ship City         </th>
+        <th>  Ship Region       </th>
+        <th>  Ship Postal Code  </th>
+        <th>  Ship Country      </th>
+    </tr>
+    @foreach (var o in ViewBag.listOfOrders)
+    {
+        <tr>
+            <td>  @o.OrderId        </td>
+            <td>  @o.CustomerId     </td>
+            <td>  @o.EmployeeId     </td>
+            <td>  @o.OrderDate      </td>
+            <td>  @o.RequiredDate   </td>
+            <td>  @o.ShippedDate    </td>
+            <td>  @o.ShipVia        </td>
+            <td>  @o.Freight        </td>
+            <td>  @o.ShipName       </td>
+            <td>  @o.ShipAddress    </td>
+            <td>  @o.ShipCity       </td>
+            <td>  @o.ShipRegion     </td>
+            <td>  @o.ShipPostalCode </td>
+            <td>  @o.ShipCountry    </td>
+        </tr>
+    }
+</table>
